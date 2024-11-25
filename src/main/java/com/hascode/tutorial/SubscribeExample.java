@@ -8,7 +8,7 @@ public class SubscribeExample {
 
   public static void main(String[] args) {
     try (Connection natsConnection = Nats.connect("nats://localhost:4222")) {
-      String subject = "communication.greetings";
+      String subject = "tasks.greetings";
 
       Dispatcher dispatcher = natsConnection.createDispatcher((msg) -> {
         String received = new String(msg.getData());
